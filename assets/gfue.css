@@ -1,0 +1,79 @@
+table.gfue-user-entries {
+	background: #fff;
+	border-collapse: collapse;
+	border: 5px solid #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+table.gfue-user-entries th,
+table.gfue-user-entries td {
+	padding: 8px 10px;
+	border: none;
+}
+
+table.gfue-user-entries th {
+	background: #23282d;
+	color: #fff;
+	border-right: 1px solid #fff;
+}
+
+table.gfue-user-entries th:last-child {
+	border-right: none;
+}
+
+table.gfue-user-entries tbody tr:nth-child(even) {
+	background: #fbfbfb;
+}
+
+table.gfue-user-entries td {
+	vertical-align: top;
+	border-right: 1px solid #efefef;
+}
+
+table.gfue-user-entries td:last-child {
+	border-right: none;
+}
+
+table.gfue-user-entries .gfue-col-entry_id {
+	width: 80px;
+}
+
+table.gfue-user-entries .gfue-col-form {
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+table.gfue-user-entries .gfue-col-date {
+	width: 150px;
+}
+
+
+table.gfue-user-entries td.gfue-col-fields {
+	padding: 0;
+}
+
+table.gfue-user-entries table.gfue-fields-table {
+	table-layout: fixed;
+	width: 360px;
+	padding: 5px 0;
+}
+
+table.gfue-user-entries table.gfue-fields-table td {
+	padding: 2px 5px;
+	font-size: 12px;
+
+	width: 150px;
+}
+
+table.gfue-user-entries table.gfue-fields-table td.gfue-field__label {
+	text-align: right;
+}
+
+table.gfue-user-entries table.gfue-fields-table td.gfue-field__value {
+}
+
+table.gfue-user-entries table.gfue-fields-table tr {
+	background: none;
+}
