@@ -116,7 +116,9 @@ function gfue_get_entries_by_user( $user_id ) {
 select entry.id
 from {$wpdb->prefix}gf_entry entry
 where entry.created_by = %d
-$where_extra",
+$where_extra
+
+limit 2000;",
 		$user_id
 	);
 	
@@ -136,7 +138,9 @@ left join {$wpdb->prefix}usermeta registration_entry
 on registration_entry.meta_key = '_gform-entry-id' and registration_entry.meta_value = entry.id
 
 where registration_entry.user_id = %d
-$where_extra",
+$where_extra
+
+limit 2000;",
 		$user_id
 	);
 	
@@ -148,6 +152,13 @@ $where_extra",
 	}
 	
 	$entries = apply_filters( 'gfue_get_entries_by_user/result', $entries, $user_id );
+	
+	// Now get all of those entry IDs sorted by date.
+	if ( $entries && $int_ids = array_map('intval', $entries) ) {
+		$sql = "select entry.id from {$wpdb->prefix}gf_entry entry where entry.id in (". esc_sql(implode(',', $int_ids)) .") order by entry.date_created desc limit 2000;";
+		
+		$entries = $wpdb->get_col( $sql );
+	}
 	
 	return $entries;
 }
