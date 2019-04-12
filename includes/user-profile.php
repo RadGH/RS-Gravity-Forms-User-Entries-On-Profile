@@ -24,7 +24,7 @@ if ( empty($entries) ) {
 	echo '<p><em>No entries have been submitted by this user.</em></p>';
 }else{
 	?>
-	<table class="gfue-user-entries">
+	<table class="gfue-user-entries gfue-sort-table">
 		<thead>
 		<tr>
 			<th class="gfue-col-entry_id">Entry ID</th>
@@ -69,9 +69,9 @@ if ( empty($entries) ) {
 			}
 			?>
 			<tr>
-				<td class="gfue-col-entry_id"><a href="<?php echo esc_attr($edit_url); ?>"><?php echo esc_html($entry_id); ?></a></td>
-				<td class="gfue-col-form"><?php echo esc_html($form['title']); ?></td>
-				<td class="gfue-col-date"><?php echo esc_html($date); ?></td>
+				<td class="gfue-col-entry_id" data-sort="<?php echo (int) $entry_id; ?>"><a href="<?php echo esc_attr($edit_url); ?>"><?php echo esc_html($entry_id); ?></a></td>
+				<td class="gfue-col-form" data-sort="<?php echo (int) $form['id']; ?>"><?php echo esc_html($form['title']); ?></td>
+				<td class="gfue-col-date" data-sort="<?php echo strtotime( $date ); ?>"><?php echo esc_html($date); ?></td>
 				<td class="gfue-col-fields">
 					<table class="gfue-fields-table"><?php echo implode( '', $fields ); ?></table>
 				</td>
