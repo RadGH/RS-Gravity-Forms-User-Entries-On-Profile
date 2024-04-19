@@ -2,16 +2,17 @@
 /*
 Plugin Name: RS Gravity Forms - User Entries On Profile
 Description: Displays form entries submitted by a user on their profile. Accessible only to administrators and anyone with the "gravityforms_view_entries" role.
-Version:     1.1.0
+Version:     1.1.1
 Author:      Radley Sustaire
 Author URI:  http://radleysustaire.com/
+GitHub Plugin URI: https://github.com/RadGH/RS-Gravity-Forms-User-Entries-On-Profile
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'RS_GFUE_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'RS_GFUE_PATH', dirname( __FILE__ ) );
-define( 'RS_GFUE_VERSION', '1.1.0' );
+define( 'RS_GFUE_VERSION', '1.1.1' );
 
 add_action( 'plugins_loaded', 'gfue_init_plugin' );
 
